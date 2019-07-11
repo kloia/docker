@@ -1,5 +1,6 @@
 ARG DOCKER_VERSION=latest
 FROM docker:${DOCKER_VERSION}
+MAINTAINER docker@kloia.com
 
 ARG COMPOSE_VERSION
 
