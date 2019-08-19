@@ -30,12 +30,6 @@ RUN apk add --no-cache \
   bash \
   openssh
 
-RUN pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}" \ 
-  awscli \
-  awsebcli \
-  direnv \
-  pipenv
-
 RUN apk --no-cache update \
      && curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
      && mv kubectl /usr/local/bin/kubectl \
