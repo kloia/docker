@@ -22,7 +22,8 @@ RUN apk add --no-cache \
   make \
   git \
   bash \
-  openssh
+  openssh \
+  gettext
 
 RUN pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}" \ 
   awscli \
