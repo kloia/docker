@@ -2,6 +2,8 @@ ARG DOCKER_VERSION=latest
 FROM docker:${DOCKER_VERSION}
 MAINTAINER docker@kloia.com
 
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+
 ARG COMPOSE_VERSION
 
 ENV KUBECTL_VERSION=v1.12.0
@@ -38,3 +40,5 @@ RUN apk --no-cache update \
      && mv linux-amd64/helm /usr/local/bin/helm \
      && chmod +x /usr/local/bin/kubectl /usr/local/bin/helm \
      && rm -rf helm-${HELM_VERSION}-linux-amd64.tar.gz
+
+USER appuser
